@@ -12,7 +12,10 @@ services:
         sync: false
       - key: GENERIC_TIMEZONE
         value: Africa/Lagos
+      - key: N8N_HOST
+        value: 0.0.0.0
     plan: free
     numInstances: 1
     healthCheckPath: /healthz
-    port: 5678
+    domains:
+      - n8n-docker.onrender.com
