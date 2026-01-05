@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: n8n-docker
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    repo: https://github.com/StanLeeSTT/n8n
+    autoDeploy: true
+    envVars:
+      - key: N8N_PROTOCOL
+        value: https
+      - key: WEBHOOK_URL
+        sync: false
+      - key: GENERIC_TIMEZONE
+        value: Africa/Lagos
+    plan: free
+    numInstances: 1
+    healthCheckPath: /healthz
+    port: 5678
